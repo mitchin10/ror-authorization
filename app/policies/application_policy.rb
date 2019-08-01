@@ -10,8 +10,9 @@ class ApplicationPolicy
     false
   end
 
+  # Add scope to show method if pundit not generate by default
   def show?
-    false
+    scope.where(:id => record.id).exists?
   end
 
   def create?
@@ -32,6 +33,11 @@ class ApplicationPolicy
 
   def destroy?
     false
+  end
+
+  # Add the scope method if pundit not generate the method by default
+  def scope
+    Pundit.policy_scope!(user, record.class)
   end
 
   class Scope
