@@ -6,37 +6,29 @@ application up and running.
 Things you may want to cover:
 Implement authorization with Pundit.
 
-* Ruby version
-ruby '2.6.3'
+Ruby version
 
-rails '5.2.3'
-* System dependencies
+* ruby '2.6.3'
+* rails '5.2.3'
+* bundle install
 
-* Configuration
-Add devise and pundit gems to Gemfile
+Configuration add devise and pundit gems to Gemfile
 
-bundle install
+* $ rails generate devise:install
 
-$ rails generate devise:install
+* $ rails generate devise User role
 
-$ rails generate devise User role
-
-Then run $ rails db:migrate
-
-$ rails g pundit:install
+* Then run $ rails db:migrate
+* $ rails g pundit:install
 
 Use the supplied generator to generate policies:
 
-$ rails g pundit:policy MODEL_NAME
-
-Include Pundit in your application controller:
+* $ rails g pundit:policy MODEL_NAME
 
 In the application_controller.rb file add
 
-include Pundit
+* include Pundit
+* protect_from_forgery
 
-protect_from_forgery
-
-
-* Database connection
-PostgreSQL
+Database connection
+* PostgreSQL
