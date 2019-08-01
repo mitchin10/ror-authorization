@@ -10,14 +10,12 @@ Ruby version
 
 * ruby '2.6.3'
 * rails '5.2.3'
-* bundle install
 
 Configuration add devise and pundit gems to Gemfile
 
+* bundle install
 * $ rails generate devise:install
-
 * $ rails generate devise User role
-
 * Then run $ rails db:migrate
 * $ rails g pundit:install
 
